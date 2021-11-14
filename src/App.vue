@@ -1,15 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>My email list</h1>
+  <div v-on:add="console.log('foi')">
+    <InputEmail :addEmailtoArray="addEmailtoArray"/>
+    <EmailList :emailList="emailList"/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import InputEmail from './components/InputEmail.vue'
+import EmailList from './components/EmailList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    InputEmail,
+    EmailList
+  },
+
+  data() {
+    return {
+      emailList: [],
+    }
+  },
+
+  methods: {
+    addEmailtoArray(param) {
+      this.emailList.push(param);
+    },
+
   }
 }
 </script>
