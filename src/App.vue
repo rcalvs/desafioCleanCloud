@@ -6,7 +6,13 @@
     </div>
     <br>
     <div>
-      <component v-bind:is="currentView" :emailList="emailList" :addEmailtoArray="addEmailtoArray"/>
+      <component
+        v-bind:is="currentView"
+        :emailList="emailList"
+        :removeEmail="removeEmail"
+        :undoEmail="undoEmail"
+        :addEmailtoArray="addEmailtoArray"
+      />
     <!-- <InputEmail :addEmailtoArray="addEmailtoArray" />
     <EmailList :emailList="emailList" /> -->
   </div>
@@ -26,7 +32,8 @@ export default {
   data() {
     return {
       emailList: [],
-      currentView:"InputEmail"
+      currentView:"InputEmail",
+      removedEmail: ''
     }
   },
 
@@ -38,6 +45,18 @@ export default {
     changeView(param) {
       this.emailList = param;
 
+    },
+
+    removeEmail(email) {
+      this.removedEmail = email;
+      const index = this.emailList.indexOf(email);
+      this.emailList[index] = `user "${email}" was removed sucessfully.`;
+    },
+    
+    undoEmail(email) {
+      const index = this.emailList.indexOf(email);
+      this.emailList[index] = this.removedEmail;
+      this.removedEmail = '';
     }
 
   }

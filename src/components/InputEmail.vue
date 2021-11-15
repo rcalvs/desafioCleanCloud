@@ -6,7 +6,7 @@
     </div>
     <div>
       <span>{{ saveMessage }}</span>
-      <a title="dismiss" href="#" v-on:click="dismissMessage">{{dismiss}}</a>
+      <a v-on:click="dismissMessage">{{dismiss}}</a>
 
     </div>
 
