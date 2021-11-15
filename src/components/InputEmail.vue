@@ -36,13 +36,13 @@ export default {
       e.preventDefault();
 
       this.$emit('add', {
-        email: this.email,
+        email: this.email
       })
 
 
       this.email = '';
-      this.saveMessage = 'Ok! E-mail added.'
-      this.dismiss = 'Dismiss.'
+      this.saveMessage = 'Ok! E-mail added.';
+      this.dismiss = 'Dismiss.';
     },
 
     dismissMessage(e) {

@@ -1,24 +1,36 @@
-# desafiocleancloud
+# Desafio CleanCloud - FrontEnd
 
-## Project setup
+Aqui estão as ferramentas desenvolvidas no projeto, as tecnologias utilizadas foram:
+
+- VueJS
+
+---
+## Scripts Disponíveis
+
+No diretório do projeto, você pode executar:
+
+
+## Setup Inicial do Projeto
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compilação para desenvolvimento
 ```
 yarn serve
 ```
+Executa o aplicativo no modo de desenvolvimento. \
+Abra [http: // localhost: 8080] (http: // localhost: 8080) para visualizá-lo no navegador.
 
-### Compiles and minifies for production
+### Compilação para produção
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### Lint
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Configurações customizadas
+Veja [Configuration Reference](https://cli.vuejs.org/config/).

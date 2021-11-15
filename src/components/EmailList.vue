@@ -36,15 +36,14 @@ export default {
 
   methods: {
     disabled() {
-      this.remove = false
-      this.undo = true
+      this.remove = false;
+      this.undo = true;
     },
 
     visible() {
-      this.remove = true
-      this.undo= false
-    }
-  
+      this.remove = true;
+      this.undo= false;
+    }  
   }
 }
 

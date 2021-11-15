@@ -63,7 +63,7 @@ export default {
     changeStyle() {
       console.log(this.isActive);
       this.isActive === true ? this.isActive = false
-        : this.isActive = true
+        : this.isActive = true;
     },
 
     removeEmail(email) {
@@ -77,7 +77,6 @@ export default {
       this.emailList[index] = this.removedEmail;
       this.removedEmail = '';
     }
-
   }
 }
 </script>
