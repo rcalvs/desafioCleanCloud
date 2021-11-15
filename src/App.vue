@@ -1,25 +1,32 @@
 <template>
   <h1>My email list</h1>
-  <div v-on:add="console.log('foi')">
-    <InputEmail :addEmailtoArray="addEmailtoArray"/>
-    <EmailList :emailList="emailList"/>
+    <div>
+      <button @click='currentView = "InputEmail"' type="submit">Change A</button>
+      <button @click='currentView = "EmailList"' type="submit">Change B</button>
+    </div>
+    <br>
+    <div>
+      <component v-bind:is="currentView" :emailList="emailList" :addEmailtoArray="addEmailtoArray"/>
+    <!-- <InputEmail :addEmailtoArray="addEmailtoArray" />
+    <EmailList :emailList="emailList" /> -->
   </div>
 </template>
 
 <script>
-import InputEmail from './components/InputEmail.vue'
-import EmailList from './components/EmailList.vue'
+import InputEmail from './components/InputEmail.vue';
+import EmailList from './components/EmailList.vue';
 
 export default {
   name: 'App',
   components: {
     InputEmail,
-    EmailList
+    EmailList,
   },
 
   data() {
     return {
       emailList: [],
+      currentView:"InputEmail"
     }
   },
 
@@ -27,6 +34,11 @@ export default {
     addEmailtoArray(param) {
       this.emailList.push(param);
     },
+
+    changeView(param) {
+      this.emailList = param;
+
+    }
 
   }
 }
